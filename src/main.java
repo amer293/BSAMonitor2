@@ -2,7 +2,7 @@
  /@Title: BSAMonitor V2
  /@Author: Amer Zahirovic
  /@Group: IS109 SQUAD D
- /Description: Een applicatie die je voortgang van bsa kan bijhouden en je ziet of je op schema bent of niet met punten
+ /@Description: Een applicatie die je voortgang van bsa kan bijhouden en je ziet of je op schema bent of niet met punten
  */
 
 import java.util.ArrayList;
