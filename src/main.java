@@ -53,15 +53,14 @@ public class main {
 
         //Loops trough all the classes till there are no more and add the grade
         for (String aClass : classes) {
-            System.out.printf(aClass  + "%S" ," cijfer: ");
+            System.out.printf(aClass  + " (1 - 10): ");
             double grade = input.nextDouble();
 
             while(grade < MIN || grade > MAX)
             {
-                System.out.printf(aClass + "%S"," cijfer opnieuw invullen: ");
-                double newGrade = grade = input.nextDouble();
+                System.out.printf(aClass + " (1 - 10): ");
+                grade = input.nextDouble();
             }
-
             //Adds the grade to the ArrayList
             grades.add(grade);
         }
