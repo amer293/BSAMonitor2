@@ -38,11 +38,11 @@ public class main {
 
         // Loops trough all the classes till there are no more and add the grade
         for (String aClass : classes) {
-            System.out.printf(aClass + "%2s", ": ");
+            System.out.print(aClass + ":  ");
             double grade = input.nextDouble();
 
             while (grade < MIN || grade > MAX) {
-                System.out.printf(aClass + "%2s", ": ");
+                System.out.print(aClass + ":  ");
                 grade = input.nextDouble();
             }
             // Adds the grade to the ArrayList
@@ -53,13 +53,17 @@ public class main {
         Double[] myGrades = new Double[grades.size()];
         myGrades = grades.toArray(myGrades);
 
-        System.out.printf("%n");
+        System.out.println();
 
+        System.out.println("-------------------------------------------------------------------------------------");
         // Prints all classes + marks and points earned
         for (int i = 0; i < classes.length; i++) {
-            System.out.printf("Vak/Project : " + classes[i] + " Cijfer: " + myGrades[i] + " Behaalde studiepunten: "
-                    + (myGrades[i] > FAILING_GRADE ? points[i] : ZERO_POINTS) + "%n");
+            System.out.printf(
+                    "| Vak/Project : %25s | " + " Cijfer: %s | " + "Behaalde studiepunten: "
+                            + (myGrades[i] > FAILING_GRADE ? points[i] : ZERO_POINTS) + " | %n",
+                    classes[i], myGrades[i]);
         }
+        System.out.println("-------------------------------------------------------------------------------------");
 
         // Total points earned
         int myPointsEarned = 0;
@@ -72,14 +76,14 @@ public class main {
         }
 
         // Prints display total points and earned points
-        System.out.printf("%n");
-        System.out.printf("Totaal behaalde studiepunten: " + myPointsEarned + "/" + TOTAL_POINTS + "%n");
+        System.out.println();
+        System.out.printf("Totaal behaalde studiepunten: %s/%s %n", myPointsEarned, TOTAL_POINTS);
 
         // If the earned points are less than totalpoints then you failed
         if (myPointsEarned < TOTAL_POINTS) {
-            System.out.printf("PAS OP: Je ligt op schema voor een negatieve BSA %n");
+            System.out.println("PAS OP: Je ligt op schema voor een negatieve BSA");
         } else {
-            System.out.printf("GOED GEDAAN: Je ligt op schema voor een mooi jaar %n");
+            System.out.println("GOED GEDAAN: Je ligt op schema voor een mooi jaar");
         }
     }
 }
