@@ -28,7 +28,7 @@ public class main {
                 "Management & Organization", "Databases" };
 
         // Array of all points liked to classes
-        int[] points = { 12, 3, 2, 2, 3, 2, 4 };
+        int[] points = { 9, 4, 4, 2, 3, 2, 4 };
 
         // Arraylist of the grades for easier input
         List<Double> grades = new ArrayList<>();
@@ -38,13 +38,14 @@ public class main {
 
         // Loops trough all the classes till there are no more and add the grade
         for (String aClass : classes) {
-            System.out.print(aClass + ":  ");
+            System.out.print(aClass + ": ");
             double grade = input.nextDouble();
-
+            // Checks if grade input is not lower than 1.0 or bigger than 10.0
             while (grade < MIN || grade > MAX) {
-                System.out.print(aClass + ":  ");
+                System.out.print(aClass + ": ");
                 grade = input.nextDouble();
             }
+
             // Adds the grade to the ArrayList
             grades.add(grade);
         }
@@ -55,15 +56,15 @@ public class main {
 
         System.out.println();
 
-        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------");
         // Prints all classes + marks and points earned
         for (int i = 0; i < classes.length; i++) {
             System.out.printf(
                     "| Vak/Project : %25s | " + " Cijfer: %s | " + "Behaalde studiepunten: "
-                            + (myGrades[i] > FAILING_GRADE ? points[i] : ZERO_POINTS) + " | %n",
+                            + (myGrades[i] > FAILING_GRADE ? points[i] : ZERO_POINTS) + "  | %n",
                     classes[i], myGrades[i]);
         }
-        System.out.println("-------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------");
 
         // Total points earned
         int myPointsEarned = 0;
@@ -85,5 +86,8 @@ public class main {
         } else {
             System.out.println("GOED GEDAAN: Je ligt op schema voor een mooi jaar");
         }
+
+        // Close scanner input to prevent Resource leak
+        input.close();
     }
 }
