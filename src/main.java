@@ -56,7 +56,7 @@ public class main {
 
         System.out.println();
 
-        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------");
         // Prints all classes + marks and points earned
         for (int i = 0; i < classes.length; i++) {
             System.out.printf(
@@ -64,7 +64,7 @@ public class main {
                             + (myGrades[i] > FAILING_GRADE ? points[i] : ZERO_POINTS) + "  | %n",
                     classes[i], myGrades[i]);
         }
-        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------");
 
         // Total points earned
         int myPointsEarned = 0;
