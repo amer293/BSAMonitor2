@@ -69,6 +69,10 @@ public class main {
         // Total points earned
         int myPointsEarned = 0;
 
+        // Get fraction
+        double fraction = (double) 5 / (double) 6 * TOTAL_POINTS;
+        int fractionConverted = (int) fraction;
+
         // Calculate total poins earned by looping trough
         for (int i = 0; i < classes.length; i++) {
             if (myGrades[i] > FAILING_GRADE) {
@@ -80,8 +84,8 @@ public class main {
         System.out.println();
         System.out.printf("Totaal behaalde studiepunten: %s/%s %n", myPointsEarned, TOTAL_POINTS);
 
-        // If the earned points are less than totalpoints then you failed
-        if (myPointsEarned < TOTAL_POINTS) {
+        // If the earned points are less than fraction you failed
+        if (myPointsEarned < fractionConverted) {
             System.out.println("PAS OP: Je ligt op schema voor een negatieve BSA");
         } else {
             System.out.println("GOED GEDAAN: Je ligt op schema voor een mooi jaar");
